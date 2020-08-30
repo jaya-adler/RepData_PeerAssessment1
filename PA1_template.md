@@ -95,8 +95,9 @@ Histogram of total  number of steps taken per day from new dataset `filledda` cr
 ```r
 dates <- as.Date(filledda$date,format = "%Y-%m-%d")
 sumsteps2 <- aggregate(steps ~ dates,filledda, FUN = sum)
-hist(sumsteps$steps,main = "Total number of steps taken per day", xlab ="Steps",ylab = "Number of dates", col = "blue")
-hist(sumsteps2$steps,main = "Total number of steps taken per day", xlab = "Steps",ylab = "Number of Dates", col = "red", add=T)
+hist(sumsteps2$steps,main = "Total number of steps taken per day", xlab = "Steps",ylab = "Number of Dates", col ="red")
+hist(sumsteps$steps,main = "Total number of steps taken per day", xlab ="Steps",ylab = "Number of dates", col = "blue",add=TRUE)
+legend("topright", c("Imputed", "Non-imputed"), col=c("red", "blue"), lwd=10)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
